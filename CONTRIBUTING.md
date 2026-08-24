@@ -1,6 +1,6 @@
 # Como contribuir
 
-Obrigado por considerar contribuir com o Feriados Brasil API.
+Obrigado por considerar contribuir com o feriados.dev open source.
 
 Este projeto tem um escopo deliberadamente pequeno: API self-hosted, Brasil-only, sem cadastro, API keys, billing ou recursos comerciais.
 

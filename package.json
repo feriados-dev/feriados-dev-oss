@@ -1,5 +1,5 @@
 {
-  "name": "feriados-brasil-api",
+  "name": "feriados-dev-oss",
   "version": "1.0.0",
   "description": "API de feriados nacionais, estaduais e municipais do Brasil",
   "main": "dist/server.js",

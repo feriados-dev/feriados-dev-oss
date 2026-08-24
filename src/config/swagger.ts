@@ -1,7 +1,7 @@
 export const swaggerDocument = {
   openapi: '3.0.0',
   info: {
-    title: 'Feriados Brasil API',
+    title: 'feriados.dev open source',
     version: '1.0.0',
     description: 'API REST open source para feriados nacionais, estaduais e municipais do Brasil.',
     license: {

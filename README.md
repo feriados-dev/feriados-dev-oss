@@ -1,4 +1,4 @@
-# Feriados Brasil API
+# feriados.dev open source
 
 API REST open source para consulta de feriados nacionais, estaduais e municipais do Brasil.
 

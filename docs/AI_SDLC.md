@@ -1,6 +1,6 @@
 # AI SDLC
 
-Este documento descreve um fluxo simples para usar IA no desenvolvimento do Feriados Brasil API.
+Este documento descreve um fluxo simples para usar IA no desenvolvimento do feriados.dev open source.
 
 O objetivo e acelerar manutencao sem reduzir rigor, principalmente em mudancas de dados.
 
@@ -82,7 +82,7 @@ Inclua:
 ### Correcao de dado
 
 ```text
-No repo Feriados Brasil API, adicione/corrija o feriado abaixo usando uma migration SQL idempotente. Mantenha escopo minimo e inclua uma query de verificacao.
+No repo feriados.dev open source, adicione/corrija o feriado abaixo usando uma migration SQL idempotente. Mantenha escopo minimo e inclua uma query de verificacao.
 
 Localidade:
 Data:
@@ -94,7 +94,7 @@ Fonte:
 ### Revisao de PR
 
 ```text
-Revise este diff como mantenedor do Feriados Brasil API. Foque em bugs, regressao de dados, idempotencia SQL, cobertura de testes e qualquer reintroducao de features comerciais.
+Revise este diff como mantenedor do feriados.dev open source. Foque em bugs, regressao de dados, idempotencia SQL, cobertura de testes e qualquer reintroducao de features comerciais.
 ```
 
 ### Investigacao de bug
