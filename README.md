@@ -4,6 +4,10 @@ API REST open source para consulta de feriados nacionais, estaduais e municipais
 
 Versao Brasil-only, self-hosted e sem cadastro, API keys, billing ou limites comerciais.
 
+Este repo tambem e preparado para contribuicao assistida por IA: inclui
+instrucoes para agentes, prompts versionados, playbooks de manutencao de dados,
+OpenAPI e validacoes executaveis.
+
 ## Stack
 
 | Camada | Tecnologia |
@@ -30,6 +34,12 @@ http://localhost:3000/api-docs
 ```
 
 O `docker-compose.yml` sobe PostgreSQL e API. O schema inicial e os seeds em `database/` populam país, estados, municipios e feriados.
+
+Para validar uma instancia rodando:
+
+```bash
+npm run smoke
+```
 
 ## Rodando localmente
 
@@ -125,9 +135,34 @@ npm run dev
 npm run build
 npm test
 npm run lint
+npm run smoke
 npm run docker:up
 npm run docker:down
 ```
+
+## Uso com IA
+
+O projeto possui arquivos pensados para Codex, Claude Code, Cursor, Copilot
+Workspace e outras ferramentas de desenvolvimento assistido por IA.
+
+- [Instrucoes para agentes](AGENTS.md)
+- [Claude Code](CLAUDE.md)
+- [GitHub Copilot](.github/copilot-instructions.md)
+- [Cursor](.cursor/rules/feriados-dev.mdc)
+- [llms.txt](llms.txt)
+- [Contexto da API para IA](docs/API_CONTEXT_FOR_AI.md)
+- [Playbook de IA](docs/AI_PLAYBOOK.md)
+- [AI SDLC](docs/AI_SDLC.md)
+- [Prompts versionados](prompts/)
+- [OpenAPI](docs/openapi/feriados-v1.openapi.yaml)
+
+Fluxos cobertos:
+
+- correcao de dados de feriados;
+- revisao de PRs;
+- investigacao de bugs;
+- checklist de release;
+- smoke tests para validar uma instancia local.
 
 ## Comunidade
 
@@ -135,6 +170,7 @@ npm run docker:down
 - [Seguranca](SECURITY.md)
 - [Codigo de Conduta](CODE_OF_CONDUCT.md)
 - [AI SDLC](docs/AI_SDLC.md)
+- [AI Playbook](docs/AI_PLAYBOOK.md)
 - [Licenca MIT](LICENSE)
 
 ## Dados

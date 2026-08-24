@@ -4,6 +4,13 @@ Este documento descreve um fluxo simples para usar IA no desenvolvimento do feri
 
 O objetivo e acelerar manutencao sem reduzir rigor, principalmente em mudancas de dados.
 
+Para instrucoes operacionais, veja tambem:
+
+- `AGENTS.md`
+- `docs/API_CONTEXT_FOR_AI.md`
+- `docs/AI_PLAYBOOK.md`
+- `prompts/`
+
 ## Principios
 
 - Humano responsavel: todo PR gerado com IA deve ser revisado por uma pessoa.
@@ -45,8 +52,10 @@ Verifique manualmente:
 npm run lint
 npm run build
 npm test
+npm run migrate -- --dry-run
 docker compose down -v
 docker compose up --build
+npm run smoke
 ```
 
 5. Fazer verificacao funcional
@@ -102,3 +111,5 @@ Revise este diff como mantenedor do feriados.dev open source. Foque em bugs, reg
 ```text
 Investigue por que o endpoint X retorna Y para o caso Z. Leia controllers, services, repositories e testes relacionados. Proponha a menor correcao possivel e como validar.
 ```
+
+Os mesmos prompts ficam versionados em `prompts/` para uso direto por agentes.

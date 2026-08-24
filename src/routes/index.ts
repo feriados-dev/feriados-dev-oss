@@ -34,7 +34,7 @@ router.use(`${API_PREFIX}/data`, dataStatusRoutes);
 router.get(API_PREFIX, (_req, res) => {
   res.json({
     status: 'success',
-    message: 'Feriados API Brasil OSS',
+    message: 'feriados.dev OSS',
     version: config.apiVersion,
     documentation: '/api-docs',
     endpoints: {

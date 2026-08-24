@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.0.3
 info:
   title: feriados.dev open source
   version: 1.0.0
-  description: API REST open source para feriados nacionais, estaduais e municipais do Brasil.
+  description: Self-hosted REST API for Brazil national, state and municipal holidays.
   license:
     name: MIT
 servers:
@@ -20,95 +20,270 @@ paths:
   /health:
     get:
       tags: [Health]
-      summary: Status geral da API
+      summary: Overall API health
       responses:
         "200":
-          description: API saudavel
+          description: API health status
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthResponse"
+  /health/liveness:
+    get:
+      tags: [Health]
+      summary: Liveness probe
+      responses:
+        "200":
+          description: Process is alive
+  /health/readiness:
+    get:
+      tags: [Health]
+      summary: Readiness probe
+      responses:
+        "200":
+          description: API is ready
+        "503":
+          description: API is not ready
+  /v1:
+    get:
+      tags: [Health]
+      summary: API index
+      responses:
+        "200":
+          description: API metadata and endpoint links
   /v1/holidays:
     get:
       tags: [Holidays]
-      summary: Busca feriados com filtros
+      summary: Search holidays
       parameters:
-        - name: year
-          in: query
-          schema:
-            type: integer
-            example: 2026
-        - name: location
-          in: query
-          schema:
-            type: string
-            example: SP-SAO-PAULO
-        - name: type
-          in: query
-          schema:
-            type: string
-            enum: [national, state, municipal, optional]
-      responses:
-        "200":
-          description: Lista de feriados
-  /v1/holidays/year/{year}:
-    get:
-      tags: [Holidays]
-      summary: Lista feriados de um ano
-      parameters:
-        - name: year
-          in: path
-          required: true
-          schema:
-            type: integer
-            example: 2026
-        - name: location
-          in: query
-          schema:
-            type: string
-            example: BR
-      responses:
-        "200":
-          description: Lista de feriados do ano
-  /v1/holidays/next:
-    get:
-      tags: [Holidays]
-      summary: Lista proximos feriados
-      parameters:
-        - name: location
+        - $ref: "#/components/parameters/YearQuery"
+        - $ref: "#/components/parameters/LocationQuery"
+        - name: state
           in: query
           schema:
             type: string
             example: SP
+        - name: city
+          in: query
+          schema:
+            type: string
+            example: Sao Paulo
+        - name: type
+          in: query
+          schema:
+            $ref: "#/components/schemas/HolidayType"
+        - name: startDate
+          in: query
+          schema:
+            type: string
+            format: date-time
+        - name: endDate
+          in: query
+          schema:
+            type: string
+            format: date-time
+        - $ref: "#/components/parameters/PageQuery"
+        - $ref: "#/components/parameters/LimitQuery"
+      responses:
+        "200":
+          description: Paginated holiday list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HolidayListResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+  /v1/holidays/year/{year}:
+    get:
+      tags: [Holidays]
+      summary: List holidays for a year
+      parameters:
+        - $ref: "#/components/parameters/YearPath"
+        - name: state
+          in: query
+          schema:
+            type: string
+            example: SP
+        - $ref: "#/components/parameters/PageQuery"
+        - $ref: "#/components/parameters/LimitQuery"
+      responses:
+        "200":
+          description: Paginated holiday list for the year
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HolidayListResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+  /v1/holidays/next:
+    get:
+      tags: [Holidays]
+      summary: List upcoming holidays for a location
+      parameters:
+        - $ref: "#/components/parameters/RequiredLocationQuery"
         - name: limit
           in: query
           schema:
             type: integer
+            default: 5
             example: 5
       responses:
         "200":
-          description: Proximos feriados
+          description: Upcoming holidays
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HolidayArrayResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+  /v1/holidays/long-weekends:
+    get:
+      tags: [Holidays]
+      summary: List long weekends and bridge opportunities
+      parameters:
+        - $ref: "#/components/parameters/RequiredLocationQuery"
+        - $ref: "#/components/parameters/YearQueryRequired"
+      responses:
+        "200":
+          description: Long weekend list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LongWeekendResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+  /v1/holidays/is:
+    get:
+      tags: [Holidays]
+      summary: Check whether a date is a holiday
+      parameters:
+        - $ref: "#/components/parameters/DateQuery"
+        - $ref: "#/components/parameters/RequiredLocationQuery"
+      responses:
+        "200":
+          description: Holiday check result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HolidayCheckResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+  /v1/holidays/compare:
+    get:
+      tags: [Holidays]
+      summary: Compare holidays between two or more locations
+      parameters:
+        - name: locations
+          in: query
+          required: true
+          schema:
+            type: string
+            example: SP-SAO-PAULO,RJ-RIO-DE-JANEIRO
+        - $ref: "#/components/parameters/YearQueryRequired"
+      responses:
+        "200":
+          description: Holiday comparison
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HolidayCompareResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+  /v1/holidays/range:
+    get:
+      tags: [Holidays]
+      summary: List holidays in a date-time range
+      parameters:
+        - name: startDate
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date-time
+        - name: endDate
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date-time
+      responses:
+        "200":
+          description: Holidays in range
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HolidayArrayResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
   /v1/holidays/ical:
     get:
       tags: [Holidays]
-      summary: Exporta calendario iCal
+      summary: Export holidays as iCalendar
+      parameters:
+        - $ref: "#/components/parameters/RequiredLocationQuery"
+        - $ref: "#/components/parameters/YearQuery"
       responses:
         "200":
-          description: Calendario em formato iCalendar
+          description: iCalendar file
+          content:
+            text/calendar:
+              schema:
+                type: string
+        "400":
+          $ref: "#/components/responses/ValidationError"
+  /v1/holidays/{id}:
+    get:
+      tags: [Holidays]
+      summary: Get a holiday by UUID
+      parameters:
+        - $ref: "#/components/parameters/UuidPath"
+      responses:
+        "200":
+          description: Holiday detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HolidayResponse"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /v1/locations:
     get:
       tags: [Locations]
-      summary: Lista localidades
+      summary: List locations
+      parameters:
+        - name: type
+          in: query
+          schema:
+            $ref: "#/components/schemas/LocationType"
+        - name: state
+          in: query
+          schema:
+            type: string
+            example: SP
+        - $ref: "#/components/parameters/PageQuery"
+        - $ref: "#/components/parameters/LimitQuery"
       responses:
         "200":
-          description: Lista de localidades
+          description: Paginated locations
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LocationListResponse"
   /v1/locations/states:
     get:
       tags: [Locations]
-      summary: Lista estados brasileiros
+      summary: List Brazilian states
       responses:
         "200":
-          description: Lista de estados
+          description: State locations
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LocationArrayResponse"
   /v1/locations/municipalities:
     get:
       tags: [Locations]
-      summary: Lista municipios
+      summary: List municipalities
       parameters:
         - name: state
           in: query
@@ -117,11 +292,76 @@ paths:
             example: SP
       responses:
         "200":
-          description: Lista de municipios
+          description: Municipality locations
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LocationArrayResponse"
+  /v1/locations/search:
+    get:
+      tags: [Locations]
+      summary: Search locations by name or code
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema:
+            type: string
+            minLength: 2
+            example: sao paulo
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+      responses:
+        "200":
+          description: Matching locations
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LocationArrayResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+  /v1/locations/code/{code}:
+    get:
+      tags: [Locations]
+      summary: Get a location by code
+      parameters:
+        - name: code
+          in: path
+          required: true
+          schema:
+            type: string
+            example: SP-SAO-PAULO
+      responses:
+        "200":
+          description: Location detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LocationResponse"
+        "404":
+          $ref: "#/components/responses/NotFound"
+  /v1/locations/{id}:
+    get:
+      tags: [Locations]
+      summary: Get a location by UUID
+      parameters:
+        - $ref: "#/components/parameters/UuidPath"
+      responses:
+        "200":
+          description: Location detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LocationResponse"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /v1/business-days:
     get:
       tags: [Business Days]
-      summary: Conta dias uteis entre duas datas
+      summary: Count business days in a date range
       parameters:
         - name: from
           in: query
@@ -129,68 +369,297 @@ paths:
           schema:
             type: string
             format: date
+            example: 2026-01-01
         - name: to
           in: query
           required: true
           schema:
             type: string
             format: date
-        - name: location
-          in: query
-          schema:
-            type: string
-            example: BR
+            example: 2026-01-10
+        - $ref: "#/components/parameters/RequiredLocationQuery"
       responses:
         "200":
-          description: Resultado do calculo
-  /v1/calendar/month:
+          description: Business day count
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BusinessDayCountResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+  /v1/business-days/add:
     get:
-      tags: [Calendar]
-      summary: Calendario mensal por localidade
+      tags: [Business Days]
+      summary: Add business days to a date
       parameters:
-        - name: year
+        - $ref: "#/components/parameters/DateQuery"
+        - name: days
           in: query
           required: true
           schema:
             type: integer
-            example: 2026
+            example: 5
+        - $ref: "#/components/parameters/RequiredLocationQuery"
+      responses:
+        "200":
+          description: Result date after adding business days
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BusinessDayAddResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+  /v1/business-days/next:
+    get:
+      tags: [Business Days]
+      summary: Find the next business day
+      parameters:
+        - $ref: "#/components/parameters/DateQuery"
+        - $ref: "#/components/parameters/RequiredLocationQuery"
+        - name: includeCurrent
+          in: query
+          schema:
+            type: boolean
+            default: false
+      responses:
+        "200":
+          description: Next business day
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BusinessDayNextResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+  /v1/business-days/is:
+    get:
+      tags: [Business Days]
+      summary: Check whether a date is a business day
+      parameters:
+        - $ref: "#/components/parameters/DateQuery"
+        - $ref: "#/components/parameters/RequiredLocationQuery"
+      responses:
+        "200":
+          description: Business day check
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BusinessDayCheckResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+  /v1/calendar/month:
+    get:
+      tags: [Calendar]
+      summary: Build a monthly calendar
+      parameters:
+        - $ref: "#/components/parameters/RequiredLocationQuery"
+        - $ref: "#/components/parameters/YearQueryRequired"
         - name: month
           in: query
           required: true
           schema:
             type: integer
-            example: 4
+            minimum: 1
+            maximum: 12
+            example: 1
+      responses:
+        "200":
+          description: Monthly calendar
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CalendarMonthResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+  /v1/data/status:
+    get:
+      tags: [Data]
+      summary: Public data coverage status
+      responses:
+        "200":
+          description: Data status
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DataStatusResponse"
+  /v1/data/changelog:
+    get:
+      tags: [Data]
+      summary: Data changelog entries
+      parameters:
         - name: location
           in: query
           schema:
             type: string
-            example: SP-SAO-PAULO
+            example: BR
+        - name: changeType
+          in: query
+          schema:
+            type: string
+            enum: [added, updated, removed, scope_changed]
+        - name: from
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: to
+          in: query
+          schema:
+            type: string
+            format: date
+        - $ref: "#/components/parameters/PageQuery"
+        - $ref: "#/components/parameters/LimitQuery"
       responses:
         "200":
-          description: Calendario do mes
-  /v1/data/status:
+          description: Data changelog
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DataChangelogResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+  /v1/data/changelog.rss:
     get:
       tags: [Data]
-      summary: Status de cobertura dos dados
+      summary: Data changelog RSS feed
       responses:
         "200":
-          description: Status dos dados
-  /v1/data/changelog:
-    get:
-      tags: [Data]
-      summary: Changelog dos dados oficiais
-      responses:
-        "200":
-          description: Alteracoes dos dados
+          description: RSS XML
+          content:
+            application/rss+xml:
+              schema:
+                type: string
   /v1/changelog:
     get:
       tags: [Changelog]
-      summary: Changelog publico da API
+      summary: Public API changelog
       responses:
         "200":
-          description: Entradas de changelog
+          description: API changelog entries
+  /v1/changelog.rss:
+    get:
+      tags: [Changelog]
+      summary: Public API changelog RSS feed
+      responses:
+        "200":
+          description: RSS XML
+          content:
+            application/rss+xml:
+              schema:
+                type: string
 components:
+  parameters:
+    DateQuery:
+      name: date
+      in: query
+      required: true
+      schema:
+        type: string
+        format: date
+        example: 2026-01-01
+    LimitQuery:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        example: 50
+    LocationQuery:
+      name: location
+      in: query
+      schema:
+        type: string
+        example: SP-SAO-PAULO
+    PageQuery:
+      name: page
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        example: 1
+    RequiredLocationQuery:
+      name: location
+      in: query
+      required: true
+      schema:
+        type: string
+        minLength: 2
+        example: SP-SAO-PAULO
+    UuidPath:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+    YearPath:
+      name: year
+      in: path
+      required: true
+      schema:
+        type: integer
+        example: 2026
+    YearQuery:
+      name: year
+      in: query
+      schema:
+        type: integer
+        example: 2026
+    YearQueryRequired:
+      name: year
+      in: query
+      required: true
+      schema:
+        type: integer
+        example: 2026
+  responses:
+    ValidationError:
+      description: Validation error
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
   schemas:
+    ApiStatus:
+      type: string
+      enum: [success, error]
+    HolidayType:
+      type: string
+      enum: [national, state, municipal, optional]
+    LocationType:
+      type: string
+      enum: [country, state, municipality]
+    Location:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        type:
+          $ref: "#/components/schemas/LocationType"
+        code:
+          type: string
+          example: SP-SAO-PAULO
+        name:
+          type: string
+          example: Sao Paulo
+        stateCode:
+          type: string
+          nullable: true
+          example: SP
+        ibgeCode:
+          type: string
+          nullable: true
+        parentId:
+          type: string
+          format: uuid
+          nullable: true
     Holiday:
       type: object
       properties:
@@ -199,29 +668,411 @@ components:
           format: uuid
         name:
           type: string
-          example: Natal
+          example: Confraternizacao Universal
         date:
           type: string
           format: date
-          example: 2026-12-25
+          example: 2026-01-01
         year:
           type: integer
           example: 2026
         type:
+          $ref: "#/components/schemas/HolidayType"
+        description:
           type: string
-          enum: [national, state, municipal, optional]
-    Location:
+          nullable: true
+        isFixed:
+          type: boolean
+        locations:
+          type: array
+          items:
+            $ref: "#/components/schemas/Location"
+    Pagination:
       type: object
       properties:
-        id:
+        page:
+          type: integer
+        limit:
+          type: integer
+        total:
+          type: integer
+        totalPages:
+          type: integer
+    ErrorResponse:
+      type: object
+      properties:
+        status:
           type: string
-          format: uuid
-        type:
+          example: error
+        message:
           type: string
-          enum: [country, state, municipality]
         code:
           type: string
-          example: SP-SAO-PAULO
-        name:
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              field:
+                type: string
+              message:
+                type: string
+    HealthResponse:
+      type: object
+      properties:
+        status:
           type: string
-          example: Sao Paulo
+          example: healthy
+        timestamp:
+          type: string
+          format: date-time
+        version:
+          type: string
+    HolidayResponse:
+      type: object
+      properties:
+        status:
+          $ref: "#/components/schemas/ApiStatus"
+        data:
+          $ref: "#/components/schemas/Holiday"
+    HolidayArrayResponse:
+      type: object
+      properties:
+        status:
+          $ref: "#/components/schemas/ApiStatus"
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/Holiday"
+        meta:
+          type: object
+    HolidayListResponse:
+      type: object
+      properties:
+        status:
+          $ref: "#/components/schemas/ApiStatus"
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/Holiday"
+        pagination:
+          $ref: "#/components/schemas/Pagination"
+    HolidayCheckResponse:
+      type: object
+      properties:
+        status:
+          $ref: "#/components/schemas/ApiStatus"
+        data:
+          type: object
+          properties:
+            date:
+              type: string
+              format: date
+            location:
+              type: string
+            isHoliday:
+              type: boolean
+            types:
+              type: array
+              items:
+                $ref: "#/components/schemas/HolidayType"
+            holidays:
+              type: array
+              items:
+                $ref: "#/components/schemas/Holiday"
+    HolidayCompareResponse:
+      type: object
+      properties:
+        status:
+          $ref: "#/components/schemas/ApiStatus"
+        data:
+          type: object
+          properties:
+            year:
+              type: integer
+            normalizedLocations:
+              type: array
+              items:
+                type: object
+            commonHolidays:
+              type: array
+              items:
+                $ref: "#/components/schemas/Holiday"
+            onlyInLocation:
+              type: object
+              additionalProperties:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Holiday"
+            totalByLocation:
+              type: object
+              additionalProperties:
+                type: integer
+    LongWeekendResponse:
+      type: object
+      properties:
+        status:
+          $ref: "#/components/schemas/ApiStatus"
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              startDate:
+                type: string
+                format: date
+              endDate:
+                type: string
+                format: date
+              days:
+                type: integer
+              type:
+                type: string
+                enum: [long_weekend, bridge]
+              bridgeDays:
+                type: array
+                items:
+                  type: string
+                  format: date
+              holidays:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Holiday"
+    LocationResponse:
+      type: object
+      properties:
+        status:
+          $ref: "#/components/schemas/ApiStatus"
+        data:
+          $ref: "#/components/schemas/Location"
+    LocationArrayResponse:
+      type: object
+      properties:
+        status:
+          $ref: "#/components/schemas/ApiStatus"
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/Location"
+        meta:
+          type: object
+    LocationListResponse:
+      type: object
+      properties:
+        status:
+          $ref: "#/components/schemas/ApiStatus"
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/Location"
+        pagination:
+          $ref: "#/components/schemas/Pagination"
+    BusinessDayCountResponse:
+      type: object
+      properties:
+        status:
+          $ref: "#/components/schemas/ApiStatus"
+        data:
+          type: object
+          properties:
+            from:
+              type: string
+              format: date
+            to:
+              type: string
+              format: date
+            location:
+              type: string
+            businessDays:
+              type: integer
+            calendarDays:
+              type: integer
+            weekends:
+              type: integer
+            holidays:
+              type: array
+              items:
+                $ref: "#/components/schemas/Holiday"
+    BusinessDayAddResponse:
+      type: object
+      properties:
+        status:
+          $ref: "#/components/schemas/ApiStatus"
+        data:
+          type: object
+          properties:
+            startDate:
+              type: string
+              format: date
+            resultDate:
+              type: string
+              format: date
+            location:
+              type: string
+            days:
+              type: integer
+            direction:
+              type: string
+              enum: [forward, backward, none]
+            holidays:
+              type: array
+              items:
+                $ref: "#/components/schemas/Holiday"
+    BusinessDayNextResponse:
+      type: object
+      properties:
+        status:
+          $ref: "#/components/schemas/ApiStatus"
+        data:
+          type: object
+          properties:
+            inputDate:
+              type: string
+              format: date
+            resultDate:
+              type: string
+              format: date
+            location:
+              type: string
+            includeCurrent:
+              type: boolean
+            skippedDays:
+              type: integer
+            holidays:
+              type: array
+              items:
+                $ref: "#/components/schemas/Holiday"
+    BusinessDayCheckResponse:
+      type: object
+      properties:
+        status:
+          $ref: "#/components/schemas/ApiStatus"
+        data:
+          type: object
+          properties:
+            date:
+              type: string
+              format: date
+            location:
+              type: string
+            isBusinessDay:
+              type: boolean
+            isWeekend:
+              type: boolean
+            holidays:
+              type: array
+              items:
+                $ref: "#/components/schemas/Holiday"
+    CalendarMonthResponse:
+      type: object
+      properties:
+        status:
+          $ref: "#/components/schemas/ApiStatus"
+        data:
+          type: object
+          properties:
+            year:
+              type: integer
+            month:
+              type: integer
+            location:
+              type: string
+            days:
+              type: array
+              items:
+                type: object
+                properties:
+                  date:
+                    type: string
+                    format: date
+                  day:
+                    type: integer
+                  weekday:
+                    type: integer
+                  isWeekend:
+                    type: boolean
+                  isHoliday:
+                    type: boolean
+                  isBusinessDay:
+                    type: boolean
+                  holidays:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Holiday"
+            summary:
+              type: object
+              properties:
+                calendarDays:
+                  type: integer
+                businessDays:
+                  type: integer
+                weekends:
+                  type: integer
+                holidays:
+                  type: integer
+    DataStatusResponse:
+      type: object
+      properties:
+        status:
+          $ref: "#/components/schemas/ApiStatus"
+        data:
+          type: object
+          properties:
+            supportedCountries:
+              type: array
+              items:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: BR
+                  name:
+                    type: string
+                    example: Brasil
+            yearsCovered:
+              type: object
+            totals:
+              type: object
+            coverageByYear:
+              type: array
+              items:
+                type: object
+            lastUpdated:
+              type: object
+            knownGaps:
+              type: array
+              items:
+                type: string
+    DataChangelogResponse:
+      type: object
+      properties:
+        status:
+          $ref: "#/components/schemas/ApiStatus"
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              dateChanged:
+                type: string
+                format: date
+              holidayName:
+                type: string
+              holidayDate:
+                type: string
+                format: date
+              changeType:
+                type: string
+                enum: [added, updated, removed, scope_changed]
+              affectedLocations:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Location"
+              source:
+                type: string
+              summary:
+                type: string
+        pagination:
+          $ref: "#/components/schemas/Pagination"

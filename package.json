@@ -16,6 +16,7 @@
     "lint": "eslint src --ext .ts",
     "prelint": "node scripts/build-changelog.mjs",
     "lint:fix": "eslint src --ext .ts --fix",
+    "smoke": "node scripts/smoke-test.mjs",
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down",
     "migrate": "node scripts/run-sql-migrations.mjs"

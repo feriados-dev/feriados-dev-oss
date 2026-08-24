@@ -1,0 +1,33 @@
+# feriados.dev open source
+
+feriados.dev open source is a self-hosted, Brazil-only REST API for national,
+state and municipal holidays.
+
+## Key Files
+
+- [README](README.md): quickstart, endpoints and project overview.
+- [Agent Instructions](AGENTS.md): rules for AI coding agents.
+- [API Context for AI](docs/API_CONTEXT_FOR_AI.md): domain model, hierarchy,
+  response patterns and pitfalls.
+- [AI Playbook](docs/AI_PLAYBOOK.md): repeatable AI-assisted workflows.
+- [AI SDLC](docs/AI_SDLC.md): development lifecycle for AI-assisted changes.
+- [OpenAPI](docs/openapi/feriados-v1.openapi.yaml): public API contract.
+- [Prompts](prompts/): reusable prompts for data corrections, PR review, bug
+  investigation and release checks.
+
+## Boundaries
+
+The OSS version has no auth, billing, plans, quotas, API keys, checkout or
+Stripe. Keep it self-hosted and public by default.
+
+## Validation
+
+Run:
+
+```bash
+npm run lint
+npm run build
+npm test
+npm run migrate -- --dry-run
+npm run smoke
+```
