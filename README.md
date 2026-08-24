@@ -2,7 +2,7 @@
 
 API REST open source para consulta de feriados nacionais, estaduais e municipais do Brasil.
 
-Esta versao e Brasil-only, self-hosted e sem cadastro, API keys, billing ou limites comerciais.
+Versao Brasil-only, self-hosted e sem cadastro, API keys, billing ou limites comerciais.
 
 ## Stack
 
@@ -29,7 +29,7 @@ http://localhost:3000/health
 http://localhost:3000/api-docs
 ```
 
-O `docker-compose.yml` sobe PostgreSQL e API. O schema inicial e os seeds em `database/` populam pais, estados, municipios e feriados.
+O `docker-compose.yml` sobe PostgreSQL e API. O schema inicial e os seeds em `database/` populam país, estados, municipios e feriados.
 
 ## Rodando localmente
 
