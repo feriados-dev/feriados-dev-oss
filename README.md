@@ -129,6 +129,14 @@ npm run docker:up
 npm run docker:down
 ```
 
+## Comunidade
+
+- [Como contribuir](CONTRIBUTING.md)
+- [Seguranca](SECURITY.md)
+- [Codigo de Conduta](CODE_OF_CONDUCT.md)
+- [AI SDLC](docs/AI_SDLC.md)
+- [Licenca MIT](LICENSE)
+
 ## Dados
 
 Os dados atuais ficam versionados em SQL dentro de `database/`.
