@@ -1,0 +1,1000 @@
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-itau', 'Itaú', 'RN', '2404903',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-jacana', 'Jaçanã', 'RN', '2405009',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-jandaira', 'Jandaíra', 'RN', '2405108',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-janduis', 'Janduís', 'RN', '2405207',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-januario-cicco', 'Januário Cicco', 'RN', '2405306',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-japi', 'Japi', 'RN', '2405405',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-jardim-de-angicos', 'Jardim de Angicos', 'RN', '2405504',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-jardim-de-piranhas', 'Jardim de Piranhas', 'RN', '2405603',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-jardim-do-serido', 'Jardim do Seridó', 'RN', '2405702',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-joao-camara', 'João Câmara', 'RN', '2405801',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-joao-dias', 'João Dias', 'RN', '2405900',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-jose-da-penha', 'José da Penha', 'RN', '2406007',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-jucurutu', 'Jucurutu', 'RN', '2406106',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-jundia', 'Jundiá', 'RN', '2406155',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-lagoa-danta', 'Lagoa d''Anta', 'RN', '2406205',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-lagoa-de-pedras', 'Lagoa de Pedras', 'RN', '2406304',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-lagoa-de-velhos', 'Lagoa de Velhos', 'RN', '2406403',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-lagoa-nova', 'Lagoa Nova', 'RN', '2406502',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-lagoa-salgada', 'Lagoa Salgada', 'RN', '2406601',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-lajes', 'Lajes', 'RN', '2406700',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-lajes-pintadas', 'Lajes Pintadas', 'RN', '2406809',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-lucrecia', 'Lucrécia', 'RN', '2406908',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-luis-gomes', 'Luís Gomes', 'RN', '2407005',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-macaiba', 'Macaíba', 'RN', '2407104',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-macau', 'Macau', 'RN', '2407203',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-major-sales', 'Major Sales', 'RN', '2407252',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-marcelino-vieira', 'Marcelino Vieira', 'RN', '2407302',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-martins', 'Martins', 'RN', '2407401',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-maxaranguape', 'Maxaranguape', 'RN', '2407500',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-messias-targino', 'Messias Targino', 'RN', '2407609',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-montanhas', 'Montanhas', 'RN', '2407708',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-monte-alegre', 'Monte Alegre', 'RN', '2407807',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-monte-das-gameleiras', 'Monte das Gameleiras', 'RN', '2407906',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-mossoro', 'Mossoró', 'RN', '2408003',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-natal', 'Natal', 'RN', '2408102',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-nisia-floresta', 'Nísia Floresta', 'RN', '2408201',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-nova-cruz', 'Nova Cruz', 'RN', '2408300',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-olho-dagua-do-borges', 'Olho d''Água do Borges', 'RN', '2408409',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-ouro-branco', 'Ouro Branco', 'RN', '2408508',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-parana', 'Paraná', 'RN', '2408607',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-parau', 'Paraú', 'RN', '2408706',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-parazinho', 'Parazinho', 'RN', '2408805',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-parelhas', 'Parelhas', 'RN', '2408904',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-rio-do-fogo', 'Rio do Fogo', 'RN', '2408953',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-passa-e-fica', 'Passa e Fica', 'RN', '2409100',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-passagem', 'Passagem', 'RN', '2409209',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-patu', 'Patu', 'RN', '2409308',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-santa-maria', 'Santa Maria', 'RN', '2409332',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-pau-dos-ferros', 'Pau dos Ferros', 'RN', '2409407',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-pedra-grande', 'Pedra Grande', 'RN', '2409506',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-pedra-preta', 'Pedra Preta', 'RN', '2409605',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-pedro-avelino', 'Pedro Avelino', 'RN', '2409704',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-pedro-velho', 'Pedro Velho', 'RN', '2409803',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-pendencias', 'Pendências', 'RN', '2409902',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-piloes', 'Pilões', 'RN', '2410009',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-poco-branco', 'Poço Branco', 'RN', '2410108',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-portalegre', 'Portalegre', 'RN', '2410207',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-porto-do-mangue', 'Porto do Mangue', 'RN', '2410256',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-serra-caiada', 'Serra Caiada', 'RN', '2410306',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-pureza', 'Pureza', 'RN', '2410405',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-rafael-fernandes', 'Rafael Fernandes', 'RN', '2410504',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-rafael-godeiro', 'Rafael Godeiro', 'RN', '2410603',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-riacho-da-cruz', 'Riacho da Cruz', 'RN', '2410702',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-riacho-de-santana', 'Riacho de Santana', 'RN', '2410801',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-riachuelo', 'Riachuelo', 'RN', '2410900',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-rodolfo-fernandes', 'Rodolfo Fernandes', 'RN', '2411007',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-tibau', 'Tibau', 'RN', '2411056',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-ruy-barbosa', 'Ruy Barbosa', 'RN', '2411106',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-santa-cruz', 'Santa Cruz', 'RN', '2411205',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-santana-do-matos', 'Santana do Matos', 'RN', '2411403',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-santana-do-serido', 'Santana do Seridó', 'RN', '2411429',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-santo-antonio', 'Santo Antônio', 'RN', '2411502',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-sao-bento-do-norte', 'São Bento do Norte', 'RN', '2411601',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-sao-bento-do-trairi', 'São Bento do Trairí', 'RN', '2411700',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-sao-fernando', 'São Fernando', 'RN', '2411809',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-sao-francisco-do-oeste', 'São Francisco do Oeste', 'RN', '2411908',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-sao-goncalo-do-amarante', 'São Gonçalo do Amarante', 'RN', '2412005',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-sao-joao-do-sabugi', 'São João do Sabugi', 'RN', '2412104',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-sao-jose-de-mipibu', 'São José de Mipibu', 'RN', '2412203',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-sao-jose-do-campestre', 'São José do Campestre', 'RN', '2412302',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-sao-jose-do-serido', 'São José do Seridó', 'RN', '2412401',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-sao-miguel', 'São Miguel', 'RN', '2412500',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-sao-miguel-do-gostoso', 'São Miguel do Gostoso', 'RN', '2412559',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-sao-paulo-do-potengi', 'São Paulo do Potengi', 'RN', '2412609',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-sao-pedro', 'São Pedro', 'RN', '2412708',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-sao-rafael', 'São Rafael', 'RN', '2412807',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-sao-tome', 'São Tomé', 'RN', '2412906',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-sao-vicente', 'São Vicente', 'RN', '2413003',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-senador-eloi-de-souza', 'Senador Elói de Souza', 'RN', '2413102',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-senador-georgino-avelino', 'Senador Georgino Avelino', 'RN', '2413201',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-serra-de-sao-bento', 'Serra de São Bento', 'RN', '2413300',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-serra-do-mel', 'Serra do Mel', 'RN', '2413359',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-serra-negra-do-norte', 'Serra Negra do Norte', 'RN', '2413409',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-serrinha', 'Serrinha', 'RN', '2413508',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-serrinha-dos-pintos', 'Serrinha dos Pintos', 'RN', '2413557',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-severiano-melo', 'Severiano Melo', 'RN', '2413607',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-sitio-novo', 'Sítio Novo', 'RN', '2413706',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-taboleiro-grande', 'Taboleiro Grande', 'RN', '2413805',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-taipu', 'Taipu', 'RN', '2413904',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-tangara', 'Tangará', 'RN', '2414001',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-tenente-ananias', 'Tenente Ananias', 'RN', '2414100',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-tenente-laurentino-cruz', 'Tenente Laurentino Cruz', 'RN', '2414159',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-tibau-do-sul', 'Tibau do Sul', 'RN', '2414209',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-timbauba-dos-batistas', 'Timbaúba dos Batistas', 'RN', '2414308',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-touros', 'Touros', 'RN', '2414407',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-triunfo-potiguar', 'Triunfo Potiguar', 'RN', '2414456',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-umarizal', 'Umarizal', 'RN', '2414506',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-upanema', 'Upanema', 'RN', '2414605',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-varzea', 'Várzea', 'RN', '2414704',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-venha-ver', 'Venha-Ver', 'RN', '2414753',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-vera-cruz', 'Vera Cruz', 'RN', '2414803',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-vicosa', 'Viçosa', 'RN', '2414902',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RN-vila-flor', 'Vila Flor', 'RN', '2415008',
+       (SELECT id FROM locations WHERE code = 'RN' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+
+-- RO (52 municípios)
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-alta-floresta-doeste', 'Alta Floresta D''Oeste', 'RO', '1100015',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-ariquemes', 'Ariquemes', 'RO', '1100023',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-cabixi', 'Cabixi', 'RO', '1100031',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-cacoal', 'Cacoal', 'RO', '1100049',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-cerejeiras', 'Cerejeiras', 'RO', '1100056',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-colorado-do-oeste', 'Colorado do Oeste', 'RO', '1100064',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-corumbiara', 'Corumbiara', 'RO', '1100072',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-costa-marques', 'Costa Marques', 'RO', '1100080',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-espigao-doeste', 'Espigão D''Oeste', 'RO', '1100098',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-guajara-mirim', 'Guajará-Mirim', 'RO', '1100106',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-jaru', 'Jaru', 'RO', '1100114',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-ji-parana', 'Ji-Paraná', 'RO', '1100122',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-machadinho-doeste', 'Machadinho D''Oeste', 'RO', '1100130',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-nova-brasilandia-doeste', 'Nova Brasilândia D''Oeste', 'RO', '1100148',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-ouro-preto-do-oeste', 'Ouro Preto do Oeste', 'RO', '1100155',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-pimenta-bueno', 'Pimenta Bueno', 'RO', '1100189',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-porto-velho', 'Porto Velho', 'RO', '1100205',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-presidente-medici', 'Presidente Médici', 'RO', '1100254',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-rio-crespo', 'Rio Crespo', 'RO', '1100262',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-rolim-de-moura', 'Rolim de Moura', 'RO', '1100288',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-santa-luzia-doeste', 'Santa Luzia D''Oeste', 'RO', '1100296',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-vilhena', 'Vilhena', 'RO', '1100304',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-sao-miguel-do-guapore', 'São Miguel do Guaporé', 'RO', '1100320',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-nova-mamore', 'Nova Mamoré', 'RO', '1100338',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-alvorada-doeste', 'Alvorada D''Oeste', 'RO', '1100346',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-alto-alegre-dos-parecis', 'Alto Alegre dos Parecis', 'RO', '1100379',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-alto-paraiso', 'Alto Paraíso', 'RO', '1100403',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-buritis', 'Buritis', 'RO', '1100452',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-novo-horizonte-do-oeste', 'Novo Horizonte do Oeste', 'RO', '1100502',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-cacaulandia', 'Cacaulândia', 'RO', '1100601',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-campo-novo-de-rondonia', 'Campo Novo de Rondônia', 'RO', '1100700',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-candeias-do-jamari', 'Candeias do Jamari', 'RO', '1100809',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-castanheiras', 'Castanheiras', 'RO', '1100908',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-chupinguaia', 'Chupinguaia', 'RO', '1100924',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-cujubim', 'Cujubim', 'RO', '1100940',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-governador-jorge-teixeira', 'Governador Jorge Teixeira', 'RO', '1101005',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-itapua-do-oeste', 'Itapuã do Oeste', 'RO', '1101104',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-ministro-andreazza', 'Ministro Andreazza', 'RO', '1101203',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-mirante-da-serra', 'Mirante da Serra', 'RO', '1101302',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-monte-negro', 'Monte Negro', 'RO', '1101401',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-nova-uniao', 'Nova União', 'RO', '1101435',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-parecis', 'Parecis', 'RO', '1101450',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-pimenteiras-do-oeste', 'Pimenteiras do Oeste', 'RO', '1101468',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-primavera-de-rondonia', 'Primavera de Rondônia', 'RO', '1101476',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-sao-felipe-doeste', 'São Felipe D''Oeste', 'RO', '1101484',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-sao-francisco-do-guapore', 'São Francisco do Guaporé', 'RO', '1101492',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-seringueiras', 'Seringueiras', 'RO', '1101500',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-teixeiropolis', 'Teixeirópolis', 'RO', '1101559',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-theobroma', 'Theobroma', 'RO', '1101609',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-urupa', 'Urupá', 'RO', '1101708',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-vale-do-anari', 'Vale do Anari', 'RO', '1101757',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RO-vale-do-paraiso', 'Vale do Paraíso', 'RO', '1101807',
+       (SELECT id FROM locations WHERE code = 'RO' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+
+-- RR (15 municípios)
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RR-amajari', 'Amajari', 'RR', '1400027',
+       (SELECT id FROM locations WHERE code = 'RR' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RR-alto-alegre', 'Alto Alegre', 'RR', '1400050',
+       (SELECT id FROM locations WHERE code = 'RR' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RR-boa-vista', 'Boa Vista', 'RR', '1400100',
+       (SELECT id FROM locations WHERE code = 'RR' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RR-bonfim', 'Bonfim', 'RR', '1400159',
+       (SELECT id FROM locations WHERE code = 'RR' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RR-canta', 'Cantá', 'RR', '1400175',
+       (SELECT id FROM locations WHERE code = 'RR' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RR-caracarai', 'Caracaraí', 'RR', '1400209',
+       (SELECT id FROM locations WHERE code = 'RR' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RR-caroebe', 'Caroebe', 'RR', '1400233',
+       (SELECT id FROM locations WHERE code = 'RR' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RR-iracema', 'Iracema', 'RR', '1400282',
+       (SELECT id FROM locations WHERE code = 'RR' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RR-mucajai', 'Mucajaí', 'RR', '1400308',
+       (SELECT id FROM locations WHERE code = 'RR' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RR-normandia', 'Normandia', 'RR', '1400407',
+       (SELECT id FROM locations WHERE code = 'RR' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RR-pacaraima', 'Pacaraima', 'RR', '1400456',
+       (SELECT id FROM locations WHERE code = 'RR' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RR-rorainopolis', 'Rorainópolis', 'RR', '1400472',
+       (SELECT id FROM locations WHERE code = 'RR' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RR-sao-joao-da-baliza', 'São João da Baliza', 'RR', '1400506',
+       (SELECT id FROM locations WHERE code = 'RR' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RR-sao-luiz', 'São Luiz', 'RR', '1400605',
+       (SELECT id FROM locations WHERE code = 'RR' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RR-uiramuta', 'Uiramutã', 'RR', '1400704',
+       (SELECT id FROM locations WHERE code = 'RR' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+
+-- RS (497 municípios)
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-acegua', 'Aceguá', 'RS', '4300034',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-agua-santa', 'Água Santa', 'RS', '4300059',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-agudo', 'Agudo', 'RS', '4300109',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-ajuricaba', 'Ajuricaba', 'RS', '4300208',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-alecrim', 'Alecrim', 'RS', '4300307',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-alegrete', 'Alegrete', 'RS', '4300406',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-alegria', 'Alegria', 'RS', '4300455',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-almirante-tamandare-do-sul', 'Almirante Tamandaré do Sul', 'RS', '4300471',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-alpestre', 'Alpestre', 'RS', '4300505',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-alto-alegre', 'Alto Alegre', 'RS', '4300554',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-alto-feliz', 'Alto Feliz', 'RS', '4300570',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-alvorada', 'Alvorada', 'RS', '4300604',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-amaral-ferrador', 'Amaral Ferrador', 'RS', '4300638',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-ametista-do-sul', 'Ametista do Sul', 'RS', '4300646',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-andre-da-rocha', 'André da Rocha', 'RS', '4300661',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-anta-gorda', 'Anta Gorda', 'RS', '4300703',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-antonio-prado', 'Antônio Prado', 'RS', '4300802',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-arambare', 'Arambaré', 'RS', '4300851',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-ararica', 'Araricá', 'RS', '4300877',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-aratiba', 'Aratiba', 'RS', '4300901',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-arroio-do-meio', 'Arroio do Meio', 'RS', '4301008',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-arroio-do-sal', 'Arroio do Sal', 'RS', '4301057',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-arroio-do-padre', 'Arroio do Padre', 'RS', '4301073',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-arroio-dos-ratos', 'Arroio dos Ratos', 'RS', '4301107',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-arroio-do-tigre', 'Arroio do Tigre', 'RS', '4301206',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-arroio-grande', 'Arroio Grande', 'RS', '4301305',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-arvorezinha', 'Arvorezinha', 'RS', '4301404',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-augusto-pestana', 'Augusto Pestana', 'RS', '4301503',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-aurea', 'Áurea', 'RS', '4301552',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-bage', 'Bagé', 'RS', '4301602',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-balneario-pinhal', 'Balneário Pinhal', 'RS', '4301636',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-barao', 'Barão', 'RS', '4301651',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-barao-de-cotegipe', 'Barão de Cotegipe', 'RS', '4301701',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-barao-do-triunfo', 'Barão do Triunfo', 'RS', '4301750',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-barracao', 'Barracão', 'RS', '4301800',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-barra-do-guarita', 'Barra do Guarita', 'RS', '4301859',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-barra-do-quarai', 'Barra do Quaraí', 'RS', '4301875',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-barra-do-ribeiro', 'Barra do Ribeiro', 'RS', '4301909',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-barra-do-rio-azul', 'Barra do Rio Azul', 'RS', '4301925',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-barra-funda', 'Barra Funda', 'RS', '4301958',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-barros-cassal', 'Barros Cassal', 'RS', '4302006',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-benjamin-constant-do-sul', 'Benjamin Constant do Sul', 'RS', '4302055',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-bento-goncalves', 'Bento Gonçalves', 'RS', '4302105',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-boa-vista-das-missoes', 'Boa Vista das Missões', 'RS', '4302154',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-boa-vista-do-burica', 'Boa Vista do Buricá', 'RS', '4302204',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-boa-vista-do-cadeado', 'Boa Vista do Cadeado', 'RS', '4302220',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-boa-vista-do-incra', 'Boa Vista do Incra', 'RS', '4302238',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-boa-vista-do-sul', 'Boa Vista do Sul', 'RS', '4302253',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-bom-jesus', 'Bom Jesus', 'RS', '4302303',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-bom-principio', 'Bom Princípio', 'RS', '4302352',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-bom-progresso', 'Bom Progresso', 'RS', '4302378',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-bom-retiro-do-sul', 'Bom Retiro do Sul', 'RS', '4302402',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-boqueirao-do-leao', 'Boqueirão do Leão', 'RS', '4302451',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-bossoroca', 'Bossoroca', 'RS', '4302501',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-bozano', 'Bozano', 'RS', '4302584',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-braga', 'Braga', 'RS', '4302600',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-brochier', 'Brochier', 'RS', '4302659',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-butia', 'Butiá', 'RS', '4302709',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-cacapava-do-sul', 'Caçapava do Sul', 'RS', '4302808',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-cacequi', 'Cacequi', 'RS', '4302907',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-cachoeira-do-sul', 'Cachoeira do Sul', 'RS', '4303004',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-cachoeirinha', 'Cachoeirinha', 'RS', '4303103',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-cacique-doble', 'Cacique Doble', 'RS', '4303202',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-caibate', 'Caibaté', 'RS', '4303301',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-caicara', 'Caiçara', 'RS', '4303400',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-camaqua', 'Camaquã', 'RS', '4303509',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-camargo', 'Camargo', 'RS', '4303558',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
+INSERT INTO locations (type, code, name, state_code, ibge_code, parent_id)
+SELECT 'municipality', 'RS-cambara-do-sul', 'Cambará do Sul', 'RS', '4303608',
+       (SELECT id FROM locations WHERE code = 'RS' LIMIT 1)
+ON CONFLICT (code) DO NOTHING;
