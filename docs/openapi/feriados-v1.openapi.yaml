@@ -14,6 +14,7 @@ tags:
   - name: Locations
   - name: Business Days
   - name: Calendar
+  - name: Impact Events
   - name: Data
   - name: Changelog
 paths:
@@ -470,6 +471,98 @@ paths:
                 $ref: "#/components/schemas/CalendarMonthResponse"
         "400":
           $ref: "#/components/responses/ValidationError"
+  /v1/impact-events:
+    get:
+      tags: [Impact Events]
+      summary: Search operational impact events
+      description: Impact events are not official holidays. They identify dates that may affect operations, mobility, demand, tourism, commerce or support.
+      parameters:
+        - $ref: "#/components/parameters/YearQuery"
+        - name: country
+          in: query
+          schema:
+            type: string
+            example: BR
+        - name: category
+          in: query
+          schema:
+            $ref: "#/components/schemas/ImpactEventCategory"
+        - name: impactLevel
+          in: query
+          schema:
+            $ref: "#/components/schemas/ImpactEventLevel"
+        - name: impactScope
+          in: query
+          schema:
+            $ref: "#/components/schemas/ImpactEventScope"
+        - name: location
+          in: query
+          schema:
+            type: string
+            example: SP-SAO-PAULO
+        - name: startDate
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: endDate
+          in: query
+          schema:
+            type: string
+            format: date
+        - $ref: "#/components/parameters/PageQuery"
+        - $ref: "#/components/parameters/LimitQuery"
+      responses:
+        "200":
+          description: Paginated impact event list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ImpactEventListResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+  /v1/impact-events/next:
+    get:
+      tags: [Impact Events]
+      summary: List upcoming operational impact events
+      parameters:
+        - name: country
+          in: query
+          schema:
+            type: string
+            default: BR
+            example: BR
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 5
+      responses:
+        "200":
+          description: Upcoming impact events
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ImpactEventArrayResponse"
+        "400":
+          $ref: "#/components/responses/ValidationError"
+  /v1/impact-events/{id}:
+    get:
+      tags: [Impact Events]
+      summary: Get an impact event by UUID
+      parameters:
+        - $ref: "#/components/parameters/UuidPath"
+      responses:
+        "200":
+          description: Impact event detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ImpactEventResponse"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /v1/data/status:
     get:
       tags: [Data]
@@ -632,6 +725,18 @@ components:
     HolidayType:
       type: string
       enum: [national, state, municipal, optional]
+    ImpactEventCategory:
+      type: string
+      enum: [sports, civic, infrastructure, cultural, commerce, weather, other]
+    ImpactEventLevel:
+      type: string
+      enum: [low, medium, high, critical]
+    ImpactEventScope:
+      type: string
+      enum: [national, state, municipality]
+    ImpactEventStatus:
+      type: string
+      enum: [scheduled, tentative, cancelled]
     LocationType:
       type: string
       enum: [country, state, municipality]
@@ -687,6 +792,68 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/Location"
+    ImpactEvent:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        slug:
+          type: string
+          example: copa-2026-brasil-marrocos
+        name:
+          type: string
+          example: "Copa 2026: Brasil x Marrocos"
+        startsAt:
+          type: string
+          format: date-time
+        endsAt:
+          type: string
+          format: date-time
+          nullable: true
+        localDate:
+          type: string
+          format: date
+          example: 2026-06-13
+        year:
+          type: integer
+          example: 2026
+        category:
+          $ref: "#/components/schemas/ImpactEventCategory"
+        impactLevel:
+          $ref: "#/components/schemas/ImpactEventLevel"
+        impactScope:
+          $ref: "#/components/schemas/ImpactEventScope"
+        impactType:
+          type: string
+          example: work_schedule_disruption
+        countryCode:
+          type: string
+          example: BR
+        locationCode:
+          type: string
+          nullable: true
+          example: SP-SAO-PAULO
+        timezone:
+          type: string
+          example: America/Sao_Paulo
+        description:
+          type: string
+        businessImpactHint:
+          type: string
+        isHoliday:
+          type: boolean
+          example: false
+        status:
+          $ref: "#/components/schemas/ImpactEventStatus"
+        sourceName:
+          type: string
+          nullable: true
+        sourceUrl:
+          type: string
+          nullable: true
+        metadata:
+          type: object
     Pagination:
       type: object
       properties:
@@ -838,6 +1005,35 @@ components:
                 type: array
                 items:
                   $ref: "#/components/schemas/Holiday"
+    ImpactEventResponse:
+      type: object
+      properties:
+        status:
+          $ref: "#/components/schemas/ApiStatus"
+        data:
+          $ref: "#/components/schemas/ImpactEvent"
+    ImpactEventArrayResponse:
+      type: object
+      properties:
+        status:
+          $ref: "#/components/schemas/ApiStatus"
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/ImpactEvent"
+        meta:
+          type: object
+    ImpactEventListResponse:
+      type: object
+      properties:
+        status:
+          $ref: "#/components/schemas/ApiStatus"
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/ImpactEvent"
+        pagination:
+          $ref: "#/components/schemas/Pagination"
     LocationResponse:
       type: object
       properties:

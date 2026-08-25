@@ -110,6 +110,24 @@ Exemplo:
 curl "http://localhost:3000/v1/calendar/month?location=SP-SAO-PAULO&year=2026&month=4"
 ```
 
+### Eventos de impacto
+
+Eventos de impacto nao sao feriados oficiais. Eles representam datas que podem
+afetar operacoes, mobilidade, atendimento, turismo, comercio ou demanda.
+
+```text
+GET /v1/impact-events
+GET /v1/impact-events/next
+GET /v1/impact-events/:id
+```
+
+Exemplos:
+
+```bash
+curl "http://localhost:3000/v1/impact-events?year=2026&impactLevel=high"
+curl "http://localhost:3000/v1/impact-events/next?country=BR&limit=5"
+```
+
 ### Dados e changelog
 
 ```text

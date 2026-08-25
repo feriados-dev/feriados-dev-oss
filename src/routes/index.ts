@@ -6,6 +6,7 @@ import changelogRoutes from './changelog.routes';
 import businessDayRoutes from './businessDay.routes';
 import calendarRoutes from './calendar.routes';
 import dataStatusRoutes from './dataStatus.routes';
+import impactEventRoutes from './impactEvent.routes';
 import { changelogController } from '@controllers/changelog.controller';
 import { holidayController } from '@controllers/holiday.controller';
 import { config } from '@config/env';
@@ -24,6 +25,7 @@ router.use(`${API_PREFIX}/holidays`, holidayRoutes);
 router.use(`${API_PREFIX}/locations`, locationRoutes);
 router.use(`${API_PREFIX}/business-days`, businessDayRoutes);
 router.use(`${API_PREFIX}/calendar`, calendarRoutes);
+router.use(`${API_PREFIX}/impact-events`, impactEventRoutes);
 
 router.get(`${API_PREFIX}/changelog.rss`, (req, res, next) =>
   changelogController.rss(req, res, next),
@@ -42,6 +44,7 @@ router.get(API_PREFIX, (_req, res) => {
       locations: `${API_PREFIX}/locations`,
       businessDays: `${API_PREFIX}/business-days`,
       calendar: `${API_PREFIX}/calendar`,
+      impactEvents: `${API_PREFIX}/impact-events`,
       data: `${API_PREFIX}/data/status`,
       dataChangelog: `${API_PREFIX}/data/changelog`,
       changelog: `${API_PREFIX}/changelog`,

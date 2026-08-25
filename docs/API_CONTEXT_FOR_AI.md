@@ -6,7 +6,8 @@ feriados.dev open source without rediscovering project rules from scratch.
 ## Purpose
 
 feriados.dev open source is a Brazil-only, self-hosted REST API for holiday
-lookups, business-day calculations, monthly calendars and iCalendar export.
+lookups, business-day calculations, monthly calendars, impact events and
+iCalendar export.
 
 The OSS version has no authentication, API keys, billing, pricing, quota or
 customer-management surface.
@@ -31,6 +32,20 @@ and municipal holidays attached to `SP-SAO-PAULO`.
 - `optional`: optional date. Some optional dates affect business-day results;
   bridge-style optional dates may be shown as holidays but should not always
   make the day non-business. Check existing tests before changing this behavior.
+
+## Impact events
+
+Impact events are not official holidays. They describe operationally relevant
+events that may affect support volume, mobility, tourism, commerce, logistics,
+staffing or demand.
+
+They are exposed under `/v1/impact-events` and use:
+
+- `category`: `sports`, `civic`, `infrastructure`, `cultural`, `commerce`,
+  `weather` or `other`.
+- `impactLevel`: `low`, `medium`, `high` or `critical`.
+- `impactScope`: `national`, `state` or `municipality`.
+- `isHoliday`: normally `false`; use holiday endpoints for legal holidays.
 
 ## Common endpoint behavior
 

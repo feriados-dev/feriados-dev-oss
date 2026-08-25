@@ -69,6 +69,15 @@ const checks = [
     },
   },
   {
+    name: 'impact events',
+    path: '/v1/impact-events?year=2026&impactLevel=high&limit=5',
+    validate: (body) => {
+      assert(body.status === 'success', 'impact-events response should be successful');
+      assert(Array.isArray(body.data), 'impact-events data should be an array');
+      assert(body.data.some((event) => event.isHoliday === false), 'impact events should not be holidays');
+    },
+  },
+  {
     name: 'ical export',
     path: '/v1/holidays/ical?location=BR&year=2026',
     validate: (body, response) => {

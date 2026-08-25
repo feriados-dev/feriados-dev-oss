@@ -1,5 +1,16 @@
 export type LocationType = 'country' | 'state' | 'municipality';
 export type HolidayType = 'national' | 'state' | 'municipal' | 'optional';
+export type ImpactEventCategory =
+  | 'sports'
+  | 'civic'
+  | 'infrastructure'
+  | 'cultural'
+  | 'commerce'
+  | 'weather'
+  | 'other';
+export type ImpactEventLevel = 'low' | 'medium' | 'high' | 'critical';
+export type ImpactEventScope = 'national' | 'state' | 'municipality';
+export type ImpactEventStatus = 'scheduled' | 'tentative' | 'cancelled';
 
 export interface Location {
   id: string;
@@ -26,6 +37,32 @@ export interface Holiday {
   updatedAt: Date;
 }
 
+export interface ImpactEvent {
+  id: string;
+  slug: string;
+  name: string;
+  startsAt: Date;
+  endsAt?: Date;
+  localDate: string;
+  year: number;
+  category: ImpactEventCategory;
+  impactLevel: ImpactEventLevel;
+  impactScope: ImpactEventScope;
+  impactType: string;
+  countryCode: string;
+  locationCode?: string;
+  timezone: string;
+  description?: string;
+  businessImpactHint?: string;
+  isHoliday: boolean;
+  status: ImpactEventStatus;
+  sourceName?: string;
+  sourceUrl?: string;
+  metadata?: Record<string, unknown>;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 export interface PaginationParams {
   page: number;
   limit: number;
@@ -48,6 +85,17 @@ export interface HolidayQueryParams extends Partial<PaginationParams> {
   location?: string;
   locationCodes?: string[];
   type?: HolidayType;
+  startDate?: string;
+  endDate?: string;
+}
+
+export interface ImpactEventQueryParams extends Partial<PaginationParams> {
+  year?: number;
+  country?: string;
+  category?: ImpactEventCategory;
+  impactLevel?: ImpactEventLevel;
+  impactScope?: ImpactEventScope;
+  location?: string;
   startDate?: string;
   endDate?: string;
 }

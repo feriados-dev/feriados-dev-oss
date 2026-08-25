@@ -20,6 +20,7 @@ export const swaggerDocument = {
     { name: 'Locations', description: 'Consulta de localidades brasileiras' },
     { name: 'Business Days', description: 'Calculo de dias uteis' },
     { name: 'Calendar', description: 'Calendario mensal por localidade' },
+    { name: 'Impact Events', description: 'Eventos de impacto operacional que nao sao feriados oficiais' },
     { name: 'Data', description: 'Metadados e changelog dos dados' },
     { name: 'Changelog', description: 'Changelog publico da API' },
   ],
@@ -54,6 +55,47 @@ export const swaggerDocument = {
           name: { type: 'string', example: 'Sao Paulo' },
           stateCode: { type: 'string', example: 'SP' },
           ibgeCode: { type: 'string', example: '3550308' },
+        },
+      },
+      ImpactEvent: {
+        type: 'object',
+        properties: {
+          id: { type: 'string', format: 'uuid' },
+          slug: { type: 'string', example: 'copa-2026-brasil-marrocos' },
+          name: { type: 'string', example: 'Copa 2026: Brasil x Marrocos' },
+          startsAt: { type: 'string', format: 'date-time' },
+          endsAt: { type: 'string', format: 'date-time' },
+          localDate: { type: 'string', format: 'date', example: '2026-06-13' },
+          year: { type: 'integer', example: 2026 },
+          category: {
+            type: 'string',
+            enum: ['sports', 'civic', 'infrastructure', 'cultural', 'commerce', 'weather', 'other'],
+            example: 'sports',
+          },
+          impactLevel: {
+            type: 'string',
+            enum: ['low', 'medium', 'high', 'critical'],
+            example: 'high',
+          },
+          impactScope: {
+            type: 'string',
+            enum: ['national', 'state', 'municipality'],
+            example: 'national',
+          },
+          impactType: { type: 'string', example: 'work_schedule_disruption' },
+          countryCode: { type: 'string', example: 'BR' },
+          locationCode: { type: 'string', example: 'SP-SAO-PAULO' },
+          timezone: { type: 'string', example: 'America/Sao_Paulo' },
+          businessImpactHint: { type: 'string' },
+          isHoliday: { type: 'boolean', example: false },
+          status: {
+            type: 'string',
+            enum: ['scheduled', 'tentative', 'cancelled'],
+            example: 'scheduled',
+          },
+          sourceName: { type: 'string' },
+          sourceUrl: { type: 'string' },
+          metadata: { type: 'object' },
         },
       },
       Error: {
@@ -171,6 +213,52 @@ export const swaggerDocument = {
         ],
         responses: {
           '200': { description: 'Calendario do mes' },
+        },
+      },
+    },
+    '/v1/impact-events': {
+      get: {
+        tags: ['Impact Events'],
+        summary: 'Busca eventos de impacto operacional',
+        description: 'Eventos de impacto nao sao feriados oficiais. Eles indicam datas que podem afetar operacoes, mobilidade, demanda, turismo, comercio ou suporte.',
+        parameters: [
+          { name: 'year', in: 'query', schema: { type: 'integer', example: 2026 } },
+          { name: 'country', in: 'query', schema: { type: 'string', example: 'BR' } },
+          { name: 'category', in: 'query', schema: { type: 'string', enum: ['sports', 'civic', 'infrastructure', 'cultural', 'commerce', 'weather', 'other'] } },
+          { name: 'impactLevel', in: 'query', schema: { type: 'string', enum: ['low', 'medium', 'high', 'critical'] } },
+          { name: 'impactScope', in: 'query', schema: { type: 'string', enum: ['national', 'state', 'municipality'] } },
+          { name: 'location', in: 'query', schema: { type: 'string', example: 'SP-SAO-PAULO' } },
+          { name: 'startDate', in: 'query', schema: { type: 'string', format: 'date' } },
+          { name: 'endDate', in: 'query', schema: { type: 'string', format: 'date' } },
+        ],
+        responses: {
+          '200': { description: 'Lista de eventos de impacto' },
+        },
+      },
+    },
+    '/v1/impact-events/next': {
+      get: {
+        tags: ['Impact Events'],
+        summary: 'Proximos eventos de impacto operacional',
+        parameters: [
+          { name: 'country', in: 'query', schema: { type: 'string', example: 'BR' } },
+          { name: 'limit', in: 'query', schema: { type: 'integer', example: 5 } },
+        ],
+        responses: {
+          '200': { description: 'Proximos eventos de impacto' },
+        },
+      },
+    },
+    '/v1/impact-events/{id}': {
+      get: {
+        tags: ['Impact Events'],
+        summary: 'Busca evento de impacto por UUID',
+        parameters: [
+          { name: 'id', in: 'path', required: true, schema: { type: 'string', format: 'uuid' } },
+        ],
+        responses: {
+          '200': { description: 'Evento de impacto' },
+          '404': { description: 'Evento nao encontrado' },
         },
       },
     },
