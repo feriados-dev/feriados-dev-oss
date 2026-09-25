@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#17392f" />
+    <meta
+      name="description"
+      content="Uma API open source para consultar feriados nacionais, estaduais e municipais do Brasil. Rode no seu ambiente e contribua com o projeto."
+    />
+    <link rel="canonical" href="https://feriados.dev/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>feriados.dev — feriados do Brasil, open source</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="feriados.dev — feriados do Brasil, open source" />
+    <meta
+      property="og:description"
+      content="Uma API aberta de feriados brasileiros, pronta para rodar na sua infraestrutura."
+    />
+    <meta property="og:url" content="https://feriados.dev/" />
+    <meta property="og:image" content="https://feriados.dev/assets/calendar.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#inicio" aria-label="feriados.dev, início">
+        <span class="wordmark__symbol" aria-hidden="true">f.</span>
+        <span>feriados.dev</span>
+      </a>
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="#dados">O projeto</a>
+        <a href="#comece">Comece aqui</a>
+        <a class="nav-github" href="https://github.com/feriados-dev/feriados-dev-oss" target="_blank" rel="noreferrer">
+          GitHub <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <img
+          class="hero__photo"
+          src="/assets/calendar.jpg"
+          alt="Calendário de papel com datas assinaladas"
+          fetchpriority="high"
+        />
+        <div class="hero__shade" aria-hidden="true"></div>
+        <div class="hero__content">
+          <p class="eyebrow"><span class="eyebrow__dot"></span> Dados abertos · Brasil</p>
+          <h1 id="hero-title">feriados<span class="hero__period">.dev</span></h1>
+          <p class="hero__lead">
+            Feriados brasileiros em uma API open source que você roda no seu ambiente.
+          </p>
+          <p class="hero__detail">
+            Datas nacionais, estaduais e municipais, com código e dados sob seu controle.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--light" href="https://github.com/feriados-dev/feriados-dev-oss" target="_blank" rel="noreferrer">
+              Explorar o projeto <span aria-hidden="true">↗</span>
+            </a>
+            <a class="button button--outline" href="#comece">Rodar localmente <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <div class="hero__footer" aria-label="Características do projeto">
+          <span>Brasil-only</span>
+          <span>Licença MIT</span>
+          <span>Self-hosted</span>
+        </div>
+        <a
+          class="photo-credit"
+          href="https://unsplash.com/photos/a-calendar-sitting-on-top-of-a-wooden-table-ADOkDLZvayc"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Foto: Behnam Norouzi / Unsplash
+        </a>
+      </section>
+
+      <section class="intro section-wrap" id="dados" aria-labelledby="intro-title">
+        <div class="section-kicker"><span>01</span> O projeto</div>
+        <div class="intro__body">
+          <h2 id="intro-title">Uma base brasileira. <span>Na sua infraestrutura.</span></h2>
+          <p class="intro__copy">
+            Consulte feriados nacionais, estaduais e municipais com uma API que pode ser instalada,
+            modificada e operada por você. Sem cadastro, sem API key e sem limites comerciais.
+          </p>
+        </div>
+        <div class="principles" role="list">
+          <article class="principle" role="listitem">
+            <span class="principle__index">A</span>
+            <h3>Dados organizados por localidade</h3>
+            <p>As datas nacionais, estaduais e municipais seguem a hierarquia de cada lugar.</p>
+          </article>
+          <article class="principle" role="listitem">
+            <span class="principle__index principle__index--blue">B</span>
+            <h3>Você opera e adapta</h3>
+            <p>PostgreSQL, Node.js e Docker Compose. O código fica no seu ambiente.</p>
+          </article>
+          <article class="principle" role="listitem">
+            <span class="principle__index principle__index--coral">C</span>
+            <h3>Aberto para contribuição</h3>
+            <p>MIT, dados versionados em SQL e um fluxo claro para revisar mudanças.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="start" id="comece" aria-labelledby="start-title">
+        <div class="section-wrap start__inner">
+          <div class="section-kicker section-kicker--light"><span>02</span> Comece aqui</div>
+          <div class="start__grid">
+            <div class="start__copy">
+              <h2 id="start-title">Seu próximo calendário começa no terminal.</h2>
+              <p>Clone o repositório e suba a API e o banco localmente com Docker Compose.</p>
+              <a class="text-link" href="https://github.com/feriados-dev/feriados-dev-oss#rodando-com-docker" target="_blank" rel="noreferrer">
+                Ver instruções e requisitos <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <div class="terminal" aria-label="Comandos para iniciar a API">
+              <div class="terminal__bar">
+                <span class="terminal__lights" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span>terminal</span>
+                <span class="terminal__language">shell</span>
+              </div>
+              <pre><code><span class="code-muted"># Obtenha o código</span>
+git clone https://github.com/feriados-dev/feriados-dev-oss.git
+cd feriados-dev-oss
+
+<span class="code-muted"># Inicie a API e o PostgreSQL</span>
+cp .env.example .env
+docker compose up --build</code></pre>
+            </div>
+          </div>
+          <div class="request-example">
+            <div>
+              <span class="request-example__label">Primeira consulta</span>
+              <code>GET /v1/holidays/year/2026</code>
+            </div>
+            <a href="https://github.com/feriados-dev/feriados-dev-oss/blob/main/docs/openapi/feriados-v1.openapi.yaml" target="_blank" rel="noreferrer">
+              Contrato OpenAPI <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing section-wrap" aria-labelledby="closing-title">
+        <div class="closing__mark" aria-hidden="true">f.</div>
+        <div class="closing__copy">
+          <p class="section-kicker"><span>03</span> Código aberto</p>
+          <h2 id="closing-title">Use. Adapte. Compartilhe.</h2>
+          <p>O projeto é mantido publicamente no GitHub e distribuído sob a licença MIT.</p>
+        </div>
+        <a class="button button--dark" href="https://github.com/feriados-dev/feriados-dev-oss" target="_blank" rel="noreferrer">
+          Acessar repositório <span aria-hidden="true">↗</span>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="wordmark wordmark--footer" href="#inicio"><span class="wordmark__symbol">f.</span><span>feriados.dev</span></a>
+      <p>Um projeto open source para feriados do Brasil.</p>
+      <div class="footer-links">
+        <a href="https://github.com/feriados-dev/feriados-dev-oss/blob/main/LICENSE" target="_blank" rel="noreferrer">Licença MIT</a>
+        <a href="https://github.com/feriados-dev/feriados-dev-oss/blob/main/CONTRIBUTING.md" target="_blank" rel="noreferrer">Contribuir</a>
+      </div>
+    </footer>
+  </body>
+</html>
