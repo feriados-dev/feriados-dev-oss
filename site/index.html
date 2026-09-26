@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#17392f" />
+    <meta name="theme-color" content="#080f27" />
     <meta
       name="description"
       content="Uma API open source para consultar feriados nacionais, estaduais e municipais do Brasil. Rode no seu ambiente e contribua com o projeto."
@@ -26,56 +26,57 @@
   <body>
     <header class="site-header">
       <a class="wordmark" href="#inicio" aria-label="feriados.dev, início">
-        <span class="wordmark__symbol" aria-hidden="true">f.</span>
-        <span>feriados.dev</span>
+        <span>feriados<span class="wordmark__period">.dev</span></span>
       </a>
       <nav class="site-nav" aria-label="Navegação principal">
-        <a href="#dados">O projeto</a>
-        <a href="#comece">Comece aqui</a>
+        <a href="https://github.com/feriados-dev/feriados-dev-oss#readme" target="_blank" rel="noreferrer">Documentação</a>
+        <a href="#comece">Começar</a>
+        <a href="#dados">Sobre o projeto</a>
         <a class="nav-github" href="https://github.com/feriados-dev/feriados-dev-oss" target="_blank" rel="noreferrer">
-          GitHub <span aria-hidden="true">↗</span>
+          Open source <span aria-hidden="true">↗</span>
         </a>
       </nav>
     </header>
 
     <main>
       <section class="hero" id="inicio" aria-labelledby="hero-title">
-        <img
-          class="hero__photo"
-          src="/assets/calendar.jpg"
-          alt="Calendário de papel com datas assinaladas"
-          fetchpriority="high"
-        />
-        <div class="hero__shade" aria-hidden="true"></div>
         <div class="hero__content">
-          <p class="eyebrow"><span class="eyebrow__dot"></span> Dados abertos · Brasil</p>
-          <h1 id="hero-title">feriados<span class="hero__period">.dev</span></h1>
-          <p class="hero__lead">
-            Feriados brasileiros em uma API open source que você roda no seu ambiente.
-          </p>
-          <p class="hero__detail">
-            Datas nacionais, estaduais e municipais, com código e dados sob seu controle.
-          </p>
+          <p class="eyebrow"><span aria-hidden="true">⌘</span> Projeto open source</p>
+          <h1 id="hero-title">Feriados do Brasil,<br /><span class="hero__period">no seu controle.</span></h1>
+          <p class="hero__lead">Uma API open source para consultar feriados nacionais, estaduais e municipais.</p>
+          <p class="hero__detail">Rode na sua infraestrutura. Use, adapte e contribua com o código e os dados.</p>
           <div class="hero__actions">
             <a class="button button--light" href="https://github.com/feriados-dev/feriados-dev-oss" target="_blank" rel="noreferrer">
-              Explorar o projeto <span aria-hidden="true">↗</span>
+              Ver projeto no GitHub <span aria-hidden="true">↗</span>
             </a>
-            <a class="button button--outline" href="#comece">Rodar localmente <span aria-hidden="true">↓</span></a>
+            <a class="button button--outline" href="#comece">Como começar <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero__footer" aria-label="Características do projeto">
+            <span>Código aberto</span><span>Licença MIT</span><span>Self-hosted</span>
           </div>
         </div>
-        <div class="hero__footer" aria-label="Características do projeto">
-          <span>Brasil-only</span>
-          <span>Licença MIT</span>
-          <span>Self-hosted</span>
+        <div class="hero__demo" aria-label="Exemplo de consulta local à API">
+          <div class="hero__demo-bar">
+            <span class="hero__demo-lights" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span>terminal · feriados.dev</span>
+          </div>
+          <pre><code><span class="demo-muted"># Inicie com Docker Compose</span>
+docker compose up --build
+
+<span class="demo-muted"># Consulte a API local</span>
+curl "http://localhost:3000/v1/holidays/year/2026"
+
+{
+  <span class="demo-key">"status"</span>: <span class="demo-string">"success"</span>,
+  <span class="demo-key">"data"</span>: [
+    {
+      <span class="demo-key">"name"</span>: <span class="demo-string">"Confraternização Universal"</span>,
+      <span class="demo-key">"date"</span>: <span class="demo-string">"2026-01-01"</span>,
+      <span class="demo-key">"type"</span>: <span class="demo-string">"national"</span>
+    }
+  ]
+}</code></pre>
         </div>
-        <a
-          class="photo-credit"
-          href="https://unsplash.com/photos/a-calendar-sitting-on-top-of-a-wooden-table-ADOkDLZvayc"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Foto: Behnam Norouzi / Unsplash
-        </a>
       </section>
 
       <section class="intro section-wrap" id="dados" aria-labelledby="intro-title">
